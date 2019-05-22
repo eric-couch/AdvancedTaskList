@@ -49,3 +49,8 @@
   top: 5px;
   right: 5px;
 }
+
+.btn {
+  position: absolute;
+  bottom: 0px;
+}

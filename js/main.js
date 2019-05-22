@@ -1,3 +1,21 @@
+function addListItem(x) {
+  console.log(x);
+  //   let listItem = document.createElement("div");
+  //   listItem.classList.add("listItem");
+
+  //   let chk = document.createElement("input");
+  //   chk.type = "checkbox";
+
+  //   let listItemText = document.createElement("div");
+  //   listItemText.classList.add("listItemText");
+  //   listItemText.contentEditable = true;
+
+  //   listItem.appendChild(chk);
+  //   listItem.appendChild(listItemText);
+
+  //   x.appendChild(listItem);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector("#addList").addEventListener("click", function() {
     let listName = prompt("Enter List Name:");
@@ -32,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let listItemText = document.createElement("div");
     listItemText.classList.add("listItemText");
     listItemText.contentEditable = true;
+    //listItemText.addEventListener("blur", addListItem(listName));
 
     let listItems = document.createElement("div");
     listItems.classList.add("listItems");
@@ -49,7 +68,26 @@ document.addEventListener("DOMContentLoaded", function() {
     closeButton.classList.add("closeButton");
     list.appendChild(closeButton);
 
+    let btn = document.createElement("button");
+    btn.innerText = "add item";
+    btn.classList.add("btn");
+    btn.addEventListener("click", function() {
+      let listItem = document.createElement("div");
+      listItem.classList.add("listItem");
+
+      let chk = document.createElement("input");
+      chk.type = "checkbox";
+
+      let listItemText = document.createElement("div");
+      listItemText.classList.add("listItemText");
+      listItemText.contentEditable = true;
+      let x = "#'" + listName + "' > div.listItems";
+      console.log(x);
+      document.querySelector(x).appendChild(listItems);
+    });
+
     list.appendChild(listItems);
+    list.appendChild(btn);
     document.body.appendChild(list);
   });
 });
