@@ -81,9 +81,12 @@ document.addEventListener("DOMContentLoaded", function() {
       let listItemText = document.createElement("div");
       listItemText.classList.add("listItemText");
       listItemText.contentEditable = true;
-      let x = "#'" + listName + "' > div.listItems";
+      // document.querySelector('[id="tes 1"] > div.listItems');
+      let x = '[id="' + listName + '"] > div.listItems';
       console.log(x);
-      document.querySelector(x).appendChild(listItems);
+      listItem.appendChild(chk);
+      listItem.appendChild(listItemText);
+      document.querySelector(x).appendChild(listItem);
     });
 
     list.appendChild(listItems);
